@@ -18,7 +18,7 @@ public class MinecraftMixin {
                     target = "Lnet/minecraft/client/renderer/entity/ItemRenderer;<init>(Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/client/resources/model/ModelManager;Lnet/minecraft/client/color/item/ItemColors;Lnet/minecraft/client/renderer/BlockEntityWithoutLevelRenderer;Lnet/minecraft/client/renderer/item/RenderItem;Lnet/minecraft/client/renderer/entity/EntityRendererManager;Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;Lnet/minecraft/client/renderer/entity/MobEntityRenderer;Lnet/minecraft/client/renderer/entity/PlayerEntityRenderer;Lnet/minecraft/world/level/block/entity/BlockEntityRenderer;Lnet/minecraft/client/renderer/chunk/ChunkRenderDispatcher;)V"
             )
     )
-    private void injectAfterModels(GameConfig gameConfig, RenderItem renderItem, CallbackInfo ci) {
-        Deduplicator.registerReloadListener(renderItem);
+    private void injectAfterModels(GameConfig gameConfig, CallbackInfo ci) {
+        Deduplicator.registerReloadListener();
     }
 }
