@@ -24,13 +24,14 @@ public class FastMap<Value> {
     private final ImmutableSet<Property<?>> propertySet;
 
     public FastMap(
-            Collection<Property<?>> properties, Map<Map<Property<?>, Comparable<?>>, Value> valuesMap, boolean compact
+            Property<?>[] properties, Map<Map<Property<?>, Comparable<?>>, Value> valuesMap, boolean compact
     ) {
-        List<FastMapKey<?>> keys = new ArrayList<>(properties.size());
+        List<FastMapKey<?>> keys = new ArrayList<>(properties.length);
         int factorUpTo = 1;
         this.toKeyIndex = new Object2IntOpenHashMap<>();
         this.toKeyIndex.defaultReturnValue(INVALID_INDEX);
-        for (Property<?> prop : properties) {
+        for (int i = 0; i < properties.length; i++) {
+            Property<?> prop = properties[i];
             this.toKeyIndex.put(prop, keys.size());
             FastMapKey<?> nextKey;
             if (compact) {
