@@ -3,7 +3,6 @@ package malte0811.ferritecore.mixin.fabric;
 import malte0811.ferritecore.impl.Deduplicator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.main.GameConfig;
-import net.minecraft.client.renderer.item.RenderItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
